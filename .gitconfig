@@ -1,0 +1,21 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[user]
+	name = Luis Marquez
+	email = ljmarquezg@gmail.com
+[global]
+
+[core]
+	excludesfile = /Users/luismarquez/.gitignore_global
+	autocrlf = input
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /private/var/folders/00/pl7p34nj21l31f9gdk8v1_rm0000gn/T/AppTranslocation/2E849F8C-9DD4-4543-BE0D-07D8F6CCF352/d/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/luismarquez/.stCommitMsg
