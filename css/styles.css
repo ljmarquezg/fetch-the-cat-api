@@ -1,0 +1,101 @@
+#wrapper {
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+.sidebar {
+    overflow: auto;
+}
+
+.avatar {
+    aspect-ratio: 1;
+    width: 100%;
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.avatar img {
+    border-radius: 50%;
+    max-width: 90%;
+    border: solid 4px white;
+    object-fit: cover;
+    background-image: url('../img/cat-placeholder-lg.svg');
+    aspect-ratio: 1;
+}
+#favouriteGatitos .avatar:hover img {
+    opacity: .5;
+}
+.avatar:hover button {
+    display: block;
+    opacity: 1
+}
+.avatar button {
+    animation: ease all .3s;
+    position: absolute;
+    top: 75%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    aspect-ratio: 1;
+}
+
+#uploadPhoto[disabled] {
+    display: none;
+}
+
+
+.placeholder {
+    display: inline-block;
+    min-height: 1em;
+    vertical-align: middle;
+    cursor: wait;
+    background-color: currentColor;
+    opacity: .5;
+}
+
+.placeholder.btn::before {
+display: inline-block;
+content: "";
+}
+
+.placeholder-xs {
+min-height: .6em;
+}
+
+.placeholder-sm {
+    min-height: .8em;
+}
+
+.placeholder-lg {
+    min-height: 1.2em;
+}
+
+.add-favourite-icon, .remove-favourite-icon {
+    pointer-events: none;
+}
+
+.placeholder-glow .placeholder {
+        animation: placeholder-glow 2s ease-in-out infinite;
+}
+
+@keyframes placeholder-glow {
+    50% {
+        opacity: .2;
+    }
+}
+
+.placeholder-wave {
+    mask-image: linear-gradient(130deg, #000 55%, rgba(0, 0, 0, (1 - .2)) 75%, #000 95%);
+    mask-size: 200% 100%;
+    animation: placeholder-wave 2s linear infinite;
+}
+
+@keyframes placeholder-wave {
+    100% {
+        mask-position: -200% 0%;
+    }
+}
